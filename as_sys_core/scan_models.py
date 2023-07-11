@@ -26,7 +26,8 @@ def scan_directory(folder_path):
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-as_std_folder = os.path.join(os.path.dirname(current_dir), "as_std_номенклатура")
+# as_std_folder = os.path.join(os.path.dirname(current_dir), "as_std_номенклатура")
+as_std_folder = os.path.abspath(os.path.join(current_dir, ".."))
 
 engine = create_engine('sqlite:///database.db')
 Base = declarative_base()
