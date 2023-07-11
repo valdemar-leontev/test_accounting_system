@@ -1,13 +1,17 @@
 import os
 import importlib.util
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
 def scan_directory(folder_path):
+    if sys.argv:
+        scan_directory = sys.argv[1] if len(sys.argv) > 1 else None
+
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            if file.endswith("_model.py"):
+            if root.split(os.path.sep)[-1] == scan_directory if scan_directory else True and file.endswith("_model.py"):
                 module_name = os.path.splitext(file)[0]
                 module_path = os.path.join(root, file)
 
