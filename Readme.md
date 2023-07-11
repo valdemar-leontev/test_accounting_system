@@ -1,3 +1,8 @@
+Existing models
+1. as_std_номенклатура\КонтурФакта\Справочники (user_model.py)
+2. as_std_номенклатура\КонтурФакта\СборщикиФорм (task_model.py)
+3. as_std_store\КонтурФакта\Регистраторы (store_model.py)
+
 ### 1. pip install sqlalchemy
 
 ### 2. Run migrate_models.bat
